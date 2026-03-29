@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>to-do List</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+  <!-- 背景 -->
+  <div class="bg-pattern"></div>
+
+  <!-- 主体 -->
+  <div class="todo">
+    <!-- 标题 -->
+    <div class="header">
+      <div class="top">
+        <!-- todo标题 -->
+        <h1 class="title">
+          <img src="images/todo.svg" alt="">
+        </h1>
+
+        <!-- 输入 -->
+        <div class="input">
+          <input class="add" type="text" id="title-input" placeholder="请输入笔记标题">
+          <textarea class="content-input" id="content-input" placeholder="请输入笔记内容"></textarea>
+          <!-- 笔记优先级选择 -->
+          <div class="priority-wrap">
+            <label for="priority-select">优先级：</label>
+            <select id="priority-select">
+              <option value="high">高</option>
+              <option value="medium" selected>中</option>
+              <option value="low">低</option>
+            </select>
+          </div>
+          <!-- 分类输入框 -->
+          <input class="category-input" type="text" id="category-input" placeholder="分类（可选）">
+          <!-- 截止时间选择 -->
+          <div class="due-date-wrap">
+            <label for="due-date-input">截至时间（可选）：</label>
+            <input type="datetime-local" id="due-date-input">
+          </div>
+          <!-- 提交 -->
+          <button type="button" class="button" id="submit-btn">提交</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 内容 -->
+    <div class="content">
+        <!-- 代办盒子 -->
+        <div class="todoBox">
+          <!-- 顶部 -->
+           <!-- 快捷键 -->
+          <div class="message">
+            <button class="complete-all">一键完成所有</button>
+            <button class="delete-all">一键删除所有</button>
+            <h3 class="text">今日事今日必</h3>
+          </div>
+          <!-- 笔记列表 -->
+           <div class="list" id="todo-list"></div>
+          <!-- 底部 -->
+           <div class="footer" id="todo-count">
+            剩余 0 项未完成
+           </div>
+        </div>
+      
+        <!-- 侧边栏 -->
+        <div class="sideBox">
+           <button id="completed-btn" class="completed-toggle">已完成</button>
+           <button id="recycle-btn" class="recycle-toggle">回收站</button>
+           <button id="filter-btn" class="filter-toggle">按分类查找</button>
+        </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

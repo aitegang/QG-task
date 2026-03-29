@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* 背景 */
+.bg-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #e8f6ff;
+}
+
+/* 标题 */
+.todo{
+  width: 100%;
+  margin: 40px auto;
+}
+.todo .header .top .title{
+  width: 100%;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.title img {
+  display: inline-block;
+  width: auto;
+  height: 52px;
+  padding: 0;
+}
+/* 输入 */
+.todo .header .top .input{
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo .header .top .input .add{
+  height: 40px;
+  line-height: 40px;
+  width: 60%;
+  padding: 0 15px;
+  font-size: 18px;
+  border: 2px solid #33322E;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.content-input {
+  width: 60%;
+  height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #33322E;
+  border-radius: 12px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+.todo .header .top .input .button{
+  height: 40px;
+  line-height: 40px;
+  width: 120px;
+  text-align: center;
+  background: #f4d799;
+  font-size: 18px;
+  border: 2px solid #33322E;
+  border-radius: 10px;
+}
+.priority-wrap{
+  width: 60%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+.priority-wrap label{font-weight: bold;}
+.priority-wrap select{
+  border: 2px solid #33322E;
+  border-radius: 12px;
+  height: 40px;
+  padding: 0 10px;
+  background: white;
+}
+.category-input {
+  width: 60%;
+  height: 40px;
+  padding: 0 15px;
+  font-size: 16px;
+  border: 2px solid #33322E;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.due-date-wrap{
+  width: 60%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+.due-date-wrap label{font-weight: bold;}
+.due-date-wrap input{
+  border: 2px solid #33322E;
+  border-radius: 12px;
+  height: 40px;
+  padding: 0 10px;
+  background: white;
+}
+.todo-item.priority-high { background: rgba(255, 138, 138, 0.35);} 
+.todo-item.priority-medium { background: rgba(255, 233, 128, 0.5);} 
+.todo-item.priority-low { background: rgba(158, 255, 158, 0.4);} 
+.todo-item.overdue h4 { color: red; }
+
+
+/* 内容 */
+.todo .content{
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.todo .content .todoBox{
+  width: 50%;
+  height: 600px;
+  border: 3px solid #33322E;
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #33322E;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+/* 顶部 */
+.todo .content .todoBox .message{
+  position: relative;
+  width: 100%;
+  height: 64px;
+  line-height: 64px;
+  font-size: 18px;
+}
+.todo .content .todoBox .message .complete-all{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 10%;
+    height: 64px;
+    font-size: 14px;
+    color: #33322E;
+    background-color: #8CD4CB;
+    border: 0;
+    border-right: 4px solid #33322E;
+    border-top-left-radius: 20px;
+}
+.todo .content .todoBox .message .complete-all:hover{
+  background-color: #7bb8af;
+}
+.todo .content .todoBox .message .delete-all{
+  position: absolute;
+    top: 0;
+    left: 10%;
+    display: inline-block;
+    width: 10%;
+    height: 64px;
+    font-size: 14px;
+    color: #33322E;
+    background-color: #e08787;
+    border: 0;
+    border-right: 4px solid #33322E;
+}
+.todo .content .todoBox .message .delete-all:hover{
+  background-color: #d06b6b;
+}
+.todo .content .todoBox .message .text{
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  width: 80%;
+  height: 64px;
+  font-size: 18px;
+  color: #33322E;
+  text-align: center;
+}
+/* 列表 */
+.todo .content .todoBox .list{
+  background-color: #e7e7e7;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  border-top: 4px solid #33322E;
+  border-bottom: 4px solid #33322E;
+  padding: 10px;
+  position: relative;
+}
+.todo .content .todoBox .footer{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 侧边栏 */
+.todo .content .sideBox{
+  background-color: #ffffff;
+  width: 120px;
+  height: 240px;
+  margin-left: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 4px solid #33322E;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px #33322E;
+  position: relative;
+}
+.todo .content .recycle-toggle,
+.todo .content .completed-toggle {
+  width: 100%;
+  background: #e08787;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.todo .content .completed-toggle {
+  background: #51cf66;
+}
+.filter-toggle {
+  width: 100%;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.category-dropdown {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: white;
+  border: 2px solid #33322E;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 10;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.category-dropdown div {
+  padding: 5px;
+  cursor: pointer;
+}
+.category-dropdown div:hover {
+  background: #f0f0f0;
+}
+.todo-item .category {
+  font-size: 12px;
+  color: #666;
+  margin-right: 5px;
+}
+.todo-item {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+.todo-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.todo-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+.todo-item .actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.todo-item .actions button,
+.todo-item > .delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.todo-item > .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e08787;
+  color: white;
+  border-radius: 6px;
+}
+.todo-item .mark-complete {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.restore-btn {
+  background: #87dc95;
+  color: white;
+}
+.delete-btn {
+  background: #e08787;
+  color: white;
+}
+
+
+
