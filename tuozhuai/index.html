@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工艺与工序拖拽编排平台</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <!-- 标准工序库 -->
+    <section class="panel panel-left">
+      <!-- 标题 -->
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">标准工序库</div>
+          <div class="panel-subtitle">拖拽至中间创建工艺</div>
+        </div>
+      </div>
+      <!-- 主体 -->
+      <div class="panel-body">
+        <ul class="item-list">
+          <li>原料切割</li>
+          <li>粗加工</li>
+          <li>精加工</li>
+          <li>表面处理</li>
+          <li>质量检验</li>
+          <li>包装入库</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 工艺列表 -->
+    <section class="panel panel-center">
+      <!-- 标题 -->
+      <div class="panel-header">
+        <span>工艺列表</span>
+        <button class="btn btn-primary" id="add-process-btn">新建工艺</button>
+      </div>
+      <!-- 主体 -->
+      <div class="panel-body">
+        <ul class="item-list" id="process-list">
+          <li class="item active">新工艺 3</li>
+          <li class="item">新工艺 4</li>
+        </ul>
+      </div>
+      <!-- 底部 -->
+      <div class="panel-footer">
+        <button class="btn btn-danger" id="delete-process-btn">删除当前工艺</button>
+      </div>
+    </section>
+
+    <!-- 工艺编辑区 -->
+    <section class="panel panel-right">
+      <div class="panel-header">
+        <span id="current-process-title">工艺：新工艺 3</span>
+        <button class="btn btn-primary" id="save-process-btn">保存工艺</button>
+      </div>
+      <div class="panel-body" id="process-detail">
+        将左侧工序拖拽到此处
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
